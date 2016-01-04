@@ -12,7 +12,8 @@ var pkg = require(path.join(__dirname, '..', 'package.json') );
 program
     .version(pkg.version)
     .command('init', 'Create a noradf project')
-    .command('install', 'Install a noradf module')
+    .command('install', 'Install a noradf module or all the modules')
+    .command('module', 'Create a noradf module')
     .parse(process.argv);
 
 if (program.args.length < 1) {

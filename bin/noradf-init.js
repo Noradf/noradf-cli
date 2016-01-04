@@ -22,7 +22,7 @@ var questions = [
     {
         type: 'input',
         name: 'name',
-        message: 'What would you name your noradf project',
+        message: 'What would be your Noradf project name',
         default: 'Noradf Project',
         validate: function (value) {
             return !!value.trim() || 'Required';
@@ -60,10 +60,7 @@ inquirer.prompt(questions, function(results) {
 
         npm.config.set('save', true);
 
-        var dependencies = [
-            'noradf-core',
-            'q'
-        ];
+        var dependencies = ['noradf-core'];
 
         console.log();
         console.log(chalk.green('Installing dependencies'));

@@ -1,8 +1,6 @@
 {
   "name": "noradf-cli",
-  "version": "0.1.0",
-  "author": "Ruben J Garcia <rubenjgarciab@gmail.com>",
-  "license": "MIT",
+  "version": "0.2.0",
   "dependencies": {
     "async": "^1.5.0",
     "async-each-series": "^1.1.0",
@@ -13,6 +11,7 @@
     "lodash": "^3.10.1",
     "ncp": "^2.0.0",
     "npm": "^3.5.2",
+    "nunjucks": "^2.2.0",
     "rimraf": "^2.5.0",
     "shelljs": "^0.5.3",
     "underscore.string": "^3.2.2"
@@ -20,5 +19,21 @@
   "preferGlobal": true,
   "bin": {
     "noradf": "./bin/noradf.js"
-  }
+  },
+  "keywords": [
+    "Node Rapid Application Development Framework",
+    "Rapid Application Development Framework",
+    "Node RAD",
+    "Node framework"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Noradf/noradf-cli.git"
+  },
+  "author": {
+    "name": "Ruben J Garcia",
+    "email": "rubenjgarciab@gmail.com",
+    "url": "https://github.com/rubenjgarcia"
+  },
+  "license": "MIT"
 }

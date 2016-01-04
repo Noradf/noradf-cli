@@ -20,6 +20,7 @@ var pkg = require(path.join(__dirname, '..', 'package.json'));
 program
     .version(pkg.version)
     .description('Install a noradf module or noradf modules from noradf.json')
+    .option('-g, --git', 'Install a module from git repository')
     .option('-p, --path', 'Install a module from local path')
     .option('-f, --force', 'Overwrite module if exists')
     .parse(process.argv);
@@ -78,7 +79,7 @@ each(modules, function (name, next) {
                     ncp(path.resolve(program.args[1]), path.join('modules', name), callback);
                 }
                 else {
-                    var source = 'git@github.com:Noradf/' + name + '.git';
+                    var source = program.git || ('git@github.com:Noradf/' + name + '.git');
                     var gitCmd = 'git clone ' + source + ' modules/' + name;
                     console.log(chalk.green('Cloning module %s'), name);
 
