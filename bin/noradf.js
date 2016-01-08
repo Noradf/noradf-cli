@@ -13,7 +13,8 @@ program
     .version(pkg.version)
     .command('init', 'Create a noradf project')
     .command('install', 'Install a noradf module or all the modules')
-    .command('module', 'Create a noradf module')
+    .command('module', 'Create a noradf module inside a Noradf application')
+    .command('module-dev', 'Create a noradf module for development')
     .parse(process.argv);
 
 if (program.args.length < 1) {

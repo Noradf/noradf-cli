@@ -20,7 +20,7 @@ var pkg = require(path.join(__dirname, '..', 'package.json'));
 program
     .version(pkg.version)
     .description('Install a noradf module or noradf modules from noradf.json')
-    .option('-g, --git', 'Install a module from git repository')
+    .option('-g, --git [url]', 'Install a module from git repository')
     .option('-p, --path', 'Install a module from local path')
     .option('-f, --force', 'Overwrite module if exists')
     .parse(process.argv);
@@ -76,7 +76,17 @@ each(modules, function (name, next) {
                     }
 
                     utils.mkdirSync('modules');
-                    ncp(path.resolve(program.args[1]), path.join('modules', name), callback);
+                    ncp(path.resolve(program.args[1]), path.join('modules', name), {filter: function (file) {
+                        console.log(file);
+                        if (file.endsWith('node_modules')
+                            || file.endsWith('bower_components')
+                            || file.endsWith('.git')
+                            || file.endsWith('.idea')) {
+                            return false;
+                        }
+
+                        return true;
+                    }}, callback);
                 }
                 else {
                     var source = program.git || ('git@github.com:Noradf/' + name + '.git');

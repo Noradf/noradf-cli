@@ -28,10 +28,26 @@ Install a module and overwrite the existing one
 
     noradf install mymodule --force
     
-Creates a noradf module with prompting
+Creates a noradf module in a Noradf Application with prompting
 
     noradf module
     
-Creates a noradf module
+Creates a noradf module in a Noradf Application
 
     noradf module mymodule
+    
+Creates a noradf module in a Noradf Application with prompting
+
+    noradf module-dev
+
+Create a noradf module for development
+
+    noradf module-dev mymodule
+    
+Install a npm package in a developing module
+
+    noradf module-dev -n npmModule
+    
+Install a bower package in a developing module
+
+    noradf module-dev -b bowerModule

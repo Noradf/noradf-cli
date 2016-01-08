@@ -15,7 +15,7 @@ var pkg = require(path.join(__dirname, '..', 'package.json') );
 
 program
     .version(pkg.version)
-    .description('Create a noradf module')
+    .description('Create a noradf module inside an application')
     .parse(process.argv);
 
 var createModule = function (name, modules) {
@@ -66,11 +66,7 @@ var questions = [
     {
         type: 'input',
         name: 'modules',
-        message: 'Does your module require any other module? (Separate them with comma)',
-        default: 'config',
-        validate: function (value) {
-            return !!value.trim() || 'Required';
-        }
+        message: 'Does your module require any other module? (Separate them with comma)'
     }
 ];
 
